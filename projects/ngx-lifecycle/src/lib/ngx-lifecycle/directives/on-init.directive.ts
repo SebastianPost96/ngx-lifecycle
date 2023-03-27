@@ -1,13 +1,22 @@
-import { Directive, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Directive,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 @Directive({
   selector: '[ngxInit]',
 })
-export class OnInitDirective implements OnInit {
+export class OnInitDirective implements OnInit, OnDestroy {
   @Output() ngxInit = new EventEmitter<void>();
 
   ngOnInit(): void {
+    this.ngxInit.emit();
+  }
+
+  ngOnDestroy(): void {
     this.ngxInit.complete();
-    throw new Error('Method not implemented.');
   }
 }
