@@ -9,7 +9,7 @@ import {
 @Directive({
   selector: '[ngxDoCheck]',
 })
-export default class DoCheckDirective implements DoCheck, OnDestroy {
+export class DoCheckDirective implements DoCheck, OnDestroy {
   @Output() ngxDoCheck = new EventEmitter<void>();
 
   ngDoCheck(): void {
