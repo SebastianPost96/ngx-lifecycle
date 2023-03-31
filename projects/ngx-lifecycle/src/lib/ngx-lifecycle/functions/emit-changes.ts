@@ -2,7 +2,7 @@ import { EventEmitter, SimpleChanges } from '@angular/core';
 
 const original = Symbol('ngxLifeCycleOnDestroy');
 
-export function emitChanges(component: any): EventEmitter<SimpleChanges> {
+export function emitChanges(component: object): EventEmitter<SimpleChanges> {
   const eventEmitter = new EventEmitter<SimpleChanges>();
   const prototype = component.constructor.prototype;
   const onChanges = 'ngOnChanges';
