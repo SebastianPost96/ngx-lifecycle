@@ -25,6 +25,8 @@ Apply the directives to any template element like in the example above.
 To listen to `ngOnChanges` you will need to create an output in your component using a library function, like this:
 
 ```ts
+import { emitChanges } from 'ngx-lifecycle';
+
 // Output property can have any name
 @Output() ngxChanges = emitChanges(this);
 ```
