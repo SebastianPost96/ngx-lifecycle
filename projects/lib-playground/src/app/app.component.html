@@ -1,0 +1,15 @@
+<ng-container *ngIf="timer$ | async as timer">
+  <div
+    *ngIf="timer < 5"
+    (ngxInit)="log('init')"
+    (ngxDestroy)="log('destroy')"
+    (ngxViewInit)="log('view Init')"
+    (ngxDoCheck)="log('do check')"
+    (ngxContentChecked)="log('content checked')"
+    (ngxContentInit)="log('content init')"
+    (ngxViewChecked)="log('view checked')"
+  >
+    This is a div
+  </div>
+  {{ timer }}
+</ng-container>
