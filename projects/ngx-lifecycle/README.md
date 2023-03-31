@@ -10,15 +10,17 @@ This library provides Directive that emit outputs for all lifecycle hooks in the
   (ngxDestroy)="log('destroy')"
   (ngxChanges)="log('changes', $event)"
   (ngxViewInit)="log('view Init')"
-  (ngxDoCheck)="log('do check')"
-  (ngxContentChecked)="log('content checked')"
-  (ngxContentInit)="log('content init')"
   (ngxViewChecked)="log('view checked')"
+  (ngxContentInit)="log('content init')"
+  (ngxContentChecked)="log('content checked')"
+  (ngxDoCheck)="log('do check')"
 >
 </my-component>
 ```
 
 ## Usage
+
+Import the `NgxLifecycleModule` into your application.
 
 Apply the directives to any template element like in the example above.
 
