@@ -4,3 +4,4 @@
 
 export * from './lib/ngx-lifecycle/ngx-lifecycle.module';
 export * from './lib/ngx-lifecycle/directives';
+export * from './lib/ngx-lifecycle/functions/emit-changes';

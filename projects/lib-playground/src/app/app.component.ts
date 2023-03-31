@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { interval } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 
@@ -13,7 +13,8 @@ export class AppComponent {
 
   timer$ = interval(1000).pipe(takeWhile((x) => x < 6));
 
-  log(text: string) {
-    console.log(text);
+  log(text: string, changes?: SimpleChanges) {
+    console.log('directive ' + text);
+    if (changes) console.log(changes);
   }
 }
