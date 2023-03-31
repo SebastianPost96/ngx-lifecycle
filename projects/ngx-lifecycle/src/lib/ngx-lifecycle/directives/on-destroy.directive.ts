@@ -8,6 +8,5 @@ export class OnDestroyDirective implements OnDestroy {
 
   ngOnDestroy(): void {
     this.ngxDestroy.next();
-    this.ngxDestroy.complete();
   }
 }

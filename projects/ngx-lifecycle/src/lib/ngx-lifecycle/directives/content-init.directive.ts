@@ -2,21 +2,16 @@ import {
   AfterContentInit,
   Directive,
   EventEmitter,
-  OnDestroy,
   Output,
 } from '@angular/core';
 
 @Directive({
   selector: '[ngxContentInit]',
 })
-export class ContentInitDirective implements AfterContentInit, OnDestroy {
+export class ContentInitDirective implements AfterContentInit {
   @Output() ngxContentInit = new EventEmitter<void>();
 
   ngAfterContentInit(): void {
     this.ngxContentInit.emit();
-  }
-
-  ngOnDestroy(): void {
-    this.ngxContentInit.complete();
   }
 }

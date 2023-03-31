@@ -1,22 +1,12 @@
-import {
-  Directive,
-  EventEmitter,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Directive, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Directive({
   selector: '[ngxInit]',
 })
-export class OnInitDirective implements OnInit, OnDestroy {
+export class OnInitDirective implements OnInit {
   @Output() ngxInit = new EventEmitter<void>();
 
   ngOnInit(): void {
     this.ngxInit.emit();
-  }
-
-  ngOnDestroy(): void {
-    this.ngxInit.complete();
   }
 }
