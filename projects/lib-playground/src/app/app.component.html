@@ -1,17 +1,16 @@
 <ng-container *ngIf="timer$ | async as timer">
-  <app-test
-    *ngIf="timer > 1 && timer < 5"
+  {{ timer }}
+  <my-component
+    *ngIf="timer > 1 && timer < 4"
     [timer]="timer"
     (ngxInit)="log('init')"
     (ngxDestroy)="log('destroy')"
+    (ngxChanges)="log('changes', $event)"
     (ngxViewInit)="log('view Init')"
     (ngxDoCheck)="log('do check')"
     (ngxContentChecked)="log('content checked')"
     (ngxContentInit)="log('content init')"
     (ngxViewChecked)="log('view checked')"
-    (ngxChanges)="log('changes')"
   >
-    This is a div
-  </app-test>
-  {{ timer }}
+  </my-component>
 </ng-container>

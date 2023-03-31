@@ -15,7 +15,7 @@ import {
 import { emitChanges } from 'projects/ngx-lifecycle/src/public-api';
 
 @Component({
-  selector: 'app-test',
+  selector: 'my-component',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss'],
 })
@@ -55,7 +55,7 @@ export class TestComponent
     this.log('init');
   }
   ngOnChanges(changes: SimpleChanges): void {
-    this.log('changes');
+    this.log('changes', changes);
   }
 
   private log(text: string, changes?: SimpleChanges): void {
