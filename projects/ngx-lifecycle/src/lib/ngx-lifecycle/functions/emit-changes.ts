@@ -9,7 +9,7 @@ export function emitChanges(component: any): EventEmitter<SimpleChanges> {
 
   prototype[original] ??= prototype[onChanges];
   prototype[onChanges] = function (changes: SimpleChanges) {
-    prototype[original].call(component, changes);
+    prototype[original]?.call(component, changes);
     eventEmitter.emit(changes);
   };
 
