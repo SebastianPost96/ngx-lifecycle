@@ -3,10 +3,10 @@ import { EventEmitter, SimpleChanges } from '@angular/core';
 const original = Symbol('ngxLifeCycleOnDestroy');
 
 /**
- * Creates an EventEmitter that emits when `ngOnChanges` function would normally be called.
- * @param component The component or directive in which the EventEmitter is created.
+ * Creates an EventEmitter that emits after `ngOnChanges` is called.
+ * @param component The component or directive calling this function.
  * @example ＠Output() ngxChanges = emitChanges(this);
- * @returns The created EventEmitter
+ * @returns The created EventEmitter.
  */
 export function emitChanges(component: object): EventEmitter<SimpleChanges> {
   const eventEmitter = new EventEmitter<SimpleChanges>();

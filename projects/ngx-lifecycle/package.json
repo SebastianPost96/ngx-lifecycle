@@ -1,12 +1,13 @@
 {
   "name": "ngx-lifecycle",
-  "version": "1.0.3",
-  "description": "Lifecycle extension library for Angular 9+.",
+  "version": "1.0.4",
+  "description": "Output directives for Angular 9+ lifecycle hooks.",
   "keywords": [
     "angular",
     "lifecycle",
     "directive",
-    "ngx"
+    "ngx",
+    "ng"
   ],
   "author": "Sebastian Post",
   "license": "MIT",

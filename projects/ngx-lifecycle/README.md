@@ -1,8 +1,6 @@
 # ngx-lifecycle
 
-Lifecycle extension library for Angular 9+.
-
-This library provides directives that emit outputs for all lifecycle hooks. These can be applied to components and elements in the following manner:
+This library provides output directives for all Angular 9+ lifecycle hooks. They can be applied to components and template elements in the following way:
 
 ```html
 <my-component
@@ -20,11 +18,9 @@ This library provides directives that emit outputs for all lifecycle hooks. Thes
 
 ## Usage
 
-Import the `NgxLifecycleModule` into your application.
+Import the `NgxLifecycleModule` into your application and apply directives to any component or template element as per above.
 
-Apply the directives to any template element as per above.
-
-To listen to `ngOnChanges`, you will need to create an output using the library function `emitChanges`, which will emit input changes to the respective component or directive.
+To listen to `ngOnChanges`, you need to create an output using the library function `emitChanges`, which will emit input changes to the respective component or directive.
 
 ```ts
 import { emitChanges } from 'ngx-lifecycle';
