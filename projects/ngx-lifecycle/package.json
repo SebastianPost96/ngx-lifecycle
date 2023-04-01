@@ -1,6 +1,22 @@
 {
   "name": "ngx-lifecycle",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "description": "Lifecycle extension library for Angular 9+.",
+  "keywords": [
+    "angular",
+    "lifecycle",
+    "directive",
+    "ngx"
+  ],
+  "author": "Sebastian Post",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SebastianPost96/ngx-lifecycle"
+  },
+  "bugs": {
+    "url": "https://github.com/SebastianPost96/ngx-lifecycle/issues"
+  },
   "peerDependencies": {
     "@angular/common": ">=9.1.7",
     "@angular/core": ">=9.1.7"

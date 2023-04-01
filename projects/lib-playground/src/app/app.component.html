@@ -11,6 +11,8 @@
     (ngxContentChecked)="log('content checked')"
     (ngxContentInit)="log('content init')"
     (ngxViewChecked)="log('view checked')"
+    [appCompatibility]="timer"
+    (directiveChanges)="log('changes custom')"
   >
   </my-component>
 </ng-container>

@@ -4,6 +4,7 @@ import { Directive, EventEmitter, OnDestroy, Output } from '@angular/core';
   selector: '[ngxDestroy]',
 })
 export class OnDestroyDirective implements OnDestroy {
+  /** Emits directly after `ngOnDestroy` is called. */
   @Output() ngxDestroy = new EventEmitter<void>();
 
   ngOnDestroy(): void {

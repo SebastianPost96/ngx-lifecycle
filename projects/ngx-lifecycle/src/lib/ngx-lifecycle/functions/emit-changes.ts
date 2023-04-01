@@ -4,7 +4,7 @@ const original = Symbol('ngxLifeCycleOnDestroy');
 
 /**
  * Creates an EventEmitter that emits when `ngOnChanges` function would normally be called.
- * @param component The component in which the EventEmitter is created.
+ * @param component The component or directive in which the EventEmitter is created.
  * @example ＠Output() ngxChanges = emitChanges(this);
  * @returns The created EventEmitter
  */
