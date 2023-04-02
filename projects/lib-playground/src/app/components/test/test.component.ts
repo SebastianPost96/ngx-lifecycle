@@ -12,7 +12,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { emitChanges } from 'projects/ngx-lifecycle/src/public-api';
+import { Watch, emitChanges } from 'projects/ngx-lifecycle/src/public-api';
 
 @Component({
   selector: 'my-component',
@@ -31,7 +31,7 @@ export class TestComponent
     OnChanges
 {
   @Input() timer?: number;
-  @Output() ngxChanges = emitChanges(this);
+  @Output() @Watch ngxChanges = emitChanges(this);
 
   ngDoCheck(): void {
     this.log('do check');
