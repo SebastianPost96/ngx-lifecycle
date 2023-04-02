@@ -1,18 +1,13 @@
 <ng-container *ngIf="timer$ | async as timer">
   {{ timer }}
-  <my-component
-    *ngIf="timer > 1 && timer < 4"
-    [timer]="timer"
-    (ngxInit)="log('init')"
-    (ngxDestroy)="log('destroy')"
-    (ngxChanges)="log('changes', $event)"
-    (ngxViewInit)="log('view Init')"
-    (ngxDoCheck)="log('do check')"
-    (ngxContentChecked)="log('content checked')"
-    (ngxContentInit)="log('content init')"
-    (ngxViewChecked)="log('view checked')"
-    [appCompatibility]="timer"
-    (directiveChanges)="log('changes custom')"
-  >
-  </my-component>
+  <ng-container *ngFor="let _ of [].constructor(5); let i = index">
+    <my-component
+      *ngIf="timer > i && timer < i + 3"
+      [timer]="timer"
+      (ngxChanges)="log(i + ' external component changes', $event)"
+      [appCompatibility]="timer"
+      (directiveChanges)="log(i + ' external directive changes', $event)"
+    >
+    </my-component>
+  </ng-container>
 </ng-container>
