@@ -20,7 +20,7 @@ export function emitChanges(component: any): EventEmitter<SimpleChanges> {
 }
 
 /**
- * Tells Angular that the component should listen to input changes.
+ * Tells Angular that the component or directive should listen to input changes.
  *
  * If the component already implements `OnChanges`, this decorator is not needed.
  */
