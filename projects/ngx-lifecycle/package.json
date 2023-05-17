@@ -1,7 +1,7 @@
 {
   "name": "ngx-lifecycle",
-  "version": "1.1.1",
-  "description": "Output directives for Angular 9+ lifecycle hooks.",
+  "version": "1.2.0",
+  "description": "Angular lifecycle hooks as directive outputs.",
   "keywords": [
     "angular",
     "lifecycle",

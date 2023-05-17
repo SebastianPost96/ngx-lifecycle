@@ -1,11 +1,12 @@
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { Watch, emitChanges } from 'projects/ngx-lifecycle/src/public-api';
+import { EmitChanges } from 'projects/ngx-lifecycle/src/public-api';
 
 @Component({
   selector: 'my-component',
@@ -14,9 +15,7 @@ import { Watch, emitChanges } from 'projects/ngx-lifecycle/src/public-api';
 })
 export class TestComponent implements OnChanges {
   @Input() timer?: number;
-  @Output() @Watch ngxChanges = emitChanges(this);
+  @Output() @EmitChanges ngxChanges!: EventEmitter<SimpleChanges>;
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('internal component changes', changes);
-  }
+  ngOnChanges(changes: SimpleChanges): void {}
 }

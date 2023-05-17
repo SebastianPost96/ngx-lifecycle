@@ -5,25 +5,23 @@ const onChanges = 'ngOnChanges';
 /**
  * Creates an EventEmitter that emits after `ngOnChanges` is called.
  * @param component The component or directive calling this function.
- * @example ＠Output() ＠Watch ngxChanges = emitChanges(this);
- * @returns The created EventEmitter.
+ * @example ＠Output() ＠EmitChanges ngxChanges: EventEmitter<SimpleChanges>;
  */
-export function emitChanges(component: any): EventEmitter<SimpleChanges> {
-  const eventEmitter = new EventEmitter<SimpleChanges>();
-
-  component[onChanges] = function (changes: SimpleChanges) {
-    component.constructor.prototype[onChanges].call(component, changes);
-    eventEmitter.emit(changes);
-  };
-
-  return eventEmitter;
-}
-
-/**
- * Tells Angular that the component or directive should listen to input changes.
- *
- * If the component already implements `OnChanges`, this decorator is not needed.
- */
-export function Watch(prototype: any, propertyKey: string): void {
+export function EmitChanges(prototype: any, propertyKey: string): void {
   prototype[onChanges] ??= function () {};
+
+  const key = Symbol('Component Change Emitter');
+  Object.defineProperty(prototype, propertyKey, {
+    get() {
+      if (!this[key]) {
+        const eventEmitter = new EventEmitter<SimpleChanges>();
+        this[onChanges] = function (changes: SimpleChanges) {
+          this.constructor.prototype[onChanges].call(this, changes);
+          eventEmitter.emit(changes);
+        };
+        this[key] = eventEmitter;
+      }
+      return this[key];
+    },
+  });
 }
